@@ -1,6 +1,8 @@
 # 🎵 Spotify Analysis Sleep Apnea Project
 
 > **Advanced music listening pattern analysis** - A comprehensive data science project analyzing Spotify streaming history
+>
+> Project done in 2021 for my Data Science and Big Data postgraduate
 
 [![Python](https://img.shields.io/badge/python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
@@ -11,7 +13,7 @@
 
 For detailed technical implementation, methodology, and results, see the comprehensive case study:
 
-**[🔗 Technical Case Study](TechnicalCaseStudy.md)**
+**[⭐ Link to Technical Case Study](TechnicalCaseStudy.md)**
 
 This document contains:
 - ✅ **Complete methodology** and data engineering approach
@@ -47,21 +49,43 @@ This project analyzes Spotify streaming history data to understand music listeni
 
 ## 🏗️ Project Architecture
 
-```
-spotify-analysis-sleep-apnea/
-├── 📊 app.py                    # Main Streamlit application
-├── 📁 modules/                  # Core functionality modules
-│   ├── load.py                  # Data loading utilities
-│   ├── transform.py             # Data transformation & enrichment
-│   └── visualize.py             # Visualization components
-├── 📁 Analytics/                # Jupyter notebooks for analysis
-│   ├── GenreNormalization.ipynb # Genre classification
-│   ├── MusicSuggestion*.ipynb   # Music recommendation systems
-│   └── LikeScore.ipynb          # Preference scoring
-├── 📁 Create Tables/            # Database schema & setup
-│   └── SpotifyTables/           # SQL database structure
-├── 📁 Spotify Extended Streaming History/  # Raw data storage
-└── 📄 requirements.txt          # Python dependencies
+```bash
+spotify-streaming-history-analysis/
+│
+├── 🎯 Application Layer
+│   ├── 📊 app.py                     # Streamlit web interface
+│   ├── ⚙️  setup.py                  # Package configuration
+│   └── 📋 requirements.txt           # Dependencies
+│
+├── 💻 Source Code
+│   └── 📦 src/spotify_analysis/
+│       ├── 🔧 core/                  # Core processing engine
+│       │   ├── data_loader.py        #   → Raw data ingestion
+│       │   ├── data_transformer.py   #   → ETL pipeline
+│       │   └── pattern_analyzer.py   #   → ML & analytics
+│       ├── 🎨 visualization/         # Interactive dashboards
+│       └── 🛠️  utils/                # Helper functions
+│
+├── 📚 Research & Analysis
+│   ├── 📔 notebooks/                 # Jupyter notebooks
+│   │   ├── 🧬 GenreNormalization     # Classification models
+│   │   ├── 🤖 MusicSuggestion*       # Recommendation systems  
+│   │   ├── ❤️  LikeScore             # Preference algorithms
+│   │   └── 📥 downloader_v2          # Data acquisition
+│   └── 📁 modules/                   # Legacy components
+│
+├── 🗄️ Data Infrastructure  
+│   ├── 💾 database/                  # Schema & migrations
+│   │   ├── create_tables.sql         #   → Main schema
+│   │   └── schema/                   #   → Advanced configs
+│   ├── ⚙️  config/                   # Environment settings
+│   └── 📜 scripts/                   # Automation tools
+│
+└── 🔬 Development & Testing
+    ├── 🧪 tests/                     # Test suite
+    ├── 📖 README.md                  # Documentation
+    ├── 📋 TechnicalCaseStudy.md      # Research methodology
+    └── 📄 LICENSE                    # MIT License
 ```
 
 ## 🚀 Features
@@ -186,78 +210,3 @@ jupyter notebook Analytics/
 - **Genre Evolution**: How taste changes over time
 - **Artist Loyalty**: Repeat listening patterns
 - **Mood Correlation**: Music choices by time of day
-
-### Sleep-Related Analysis
-- **Night-Time Genres**: What people listen to before sleep
-- **Skip Patterns**: How engagement changes during sleep hours
-- **Session Duration**: Length of listening sessions by time
-
-## 🔬 Research Applications
-
-This project serves as a foundation for:
-
-- **Sleep Research**: Understanding music's role in sleep patterns
-- **Behavioral Psychology**: Music consumption patterns
-- **Data Science**: Time series analysis and pattern recognition
-- **Music Psychology**: How people interact with music
-
-## 📈 Performance & Scalability
-
-- **Data Processing**: Handles millions of streaming records
-- **Memory Efficient**: Streaming data processing for large datasets
-- **Modular Design**: Easy to extend with new analysis modules
-- **Database Ready**: PostgreSQL integration for complex queries
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our contributing guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Setup
-
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-python -m pytest tests/
-
-# Format code
-black .
-isort .
-```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Spotify** for providing the data export functionality
-- **Streamlit** for the excellent web application framework
-- **ListenBrainz** for music metadata enrichment
-- **Python Community** for the amazing ecosystem of data science libraries
-
-## 📚 References
-
-- [Spotify API Documentation](https://developer.spotify.com/documentation/)
-- [ListenBrainz API](https://listenbrainz.readthedocs.io/)
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [Pandas Documentation](https://pandas.pydata.org/docs/)
-
-## 📞 Support
-
-For questions, issues, or contributions:
-
-- **Issues**: [GitHub Issues](https://github.com/your-username/spotify-analysis-sleep-apnea/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/spotify-analysis-sleep-apnea/discussions)
-- **Email**: your-email@example.com
-
----
-
-**Note**: This project is for research and educational purposes. Always respect privacy and data protection regulations when working with personal data. 
