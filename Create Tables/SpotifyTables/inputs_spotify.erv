@@ -1,0 +1,75 @@
+album
+    #album_id, ID
+    $album_spotify_id, VARCHAR(100)
+    album_genius_id, VARCHAR(100)
+    title, VARCHAR(250)
+    release_date, VARCHAR(100)
+    total_tracks, INTEGER
+
+artist
+    #artist_id, ID
+    artist_spotify_id, VARCHAR(100)
+    artist_genius_id, VARCHAR(100)
+    $title, VARCHAR(250)
+    instagram_name, VARCHAR(100)
+    twitter_name, VARCHAR(100)
+
+$music
+    #music_id, ID
+    music_spotify_id, VARCHAR(100)
+    music_genius_id, VARCHAR(100)
+    album_id, INTEGER, album(album_id)
+    $title, VARCHAR(250)
+    duration_ms, FLOAT
+    popularity, INTEGER
+    danceability, FLOAT
+    energy, FLOAT
+    music_key, INTEGER
+    loudness, FLOAT
+    mode, INTEGER
+    speechiness, FLOAT
+    acousticness, FLOAT
+    instrumentalness, FLOAT
+    liveness, FLOAT
+    valence, FLOAT
+    tempo, FLOAT
+    time_signature, FLOAT
+    genius_description, VARCHAR(500)
+    lyrics, TEXT
+
+genre
+    #genre_id, ID
+    $genre, VARCHAR(100)
+
+music_artist
+    #music_artist_id, ID
+    music_id, INTEGER, music(music_id)
+    artist_id, INTEGER, artist(artist_id)
+    label, VARCHAR(100)
+
+album_artist
+    #album_artist_id, ID
+    album_id, INTEGER, album(album_id)
+    artist_id, INTEGER, artist(artist_id)
+
+genre_artist
+    #genre_artist_id, ID
+    genre_id, INTEGER, genre(genre_id)
+    artist_id, INTEGER, artist(artist_id)
+
+play
+    #play_id, ID
+    music_id, INTEGER, music(music_id)
+    end_time, VARCHAR(100)
+    ms_played, FLOAT
+
+top_music
+    #top_music_id, ID
+    music_id, INTEGER, music(music_id)
+    top_year, INTEGER
+    place, INTEGER
+
+favorite
+    #favorite_id, ID
+    music_id, INTEGER, music(music_id)
+    favorite_year, INTEGER

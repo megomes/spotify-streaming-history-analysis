@@ -1,12 +1,12 @@
-# Spotify Data
-Spotify Extended Streaming History/
-my_spotify_data.zip
-
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# C extensions
 *.so
+
+# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -27,6 +28,8 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -47,7 +50,6 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-cover/
 
 # Translations
 *.mo
@@ -70,7 +72,6 @@ instance/
 docs/_build/
 
 # PyBuilder
-.pybuilder/
 target/
 
 # Jupyter Notebook
@@ -84,15 +85,13 @@ ipython_config.py
 .python-version
 
 # pipenv
-Pipfile.lock
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
 
-# poetry
-poetry.lock
-
-# pdm
-.pdm.toml
-
-# PEP 582
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
 # Celery stuff
@@ -129,32 +128,77 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# pytype static type analyzer
-.pytype/
+# Spotify data files (privacy sensitive)
+Spotify Extended Streaming History/
+*.json
+!example_data.json
 
-# Cython debug symbols
-cython_debug/
+# Database files
+*.db
+*.sqlite
+*.sqlite3
 
-# PyCharm
-.idea/
+# Log files
+*.log
 
-# VS Code
+# IDE files
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# macOS
+# OS generated files
 .DS_Store
-
-# Windows
-Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 ehthumbs.db
-Desktop.ini
+Thumbs.db
 
-# Project specific
-data/processed/
-outputs/charts/
-outputs/reports/
-*.parquet
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Configuration files with sensitive data
+config.ini
+secrets.json
+credentials.json
+
+# Output files
+output/
+results/
+exports/
 *.csv
 *.xlsx
 *.pdf
-*.html 
+!example_output.csv
+
+# Cache directories
+.cache/
+cache/
+
+# Streamlit
+.streamlit/
+
+# Jupyter notebook outputs
+*.ipynb
+!*.ipynb
+
+# Documentation builds
+docs/_build/
+site/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Development
+.env.local
+.env.development
+.env.test
+.env.production 

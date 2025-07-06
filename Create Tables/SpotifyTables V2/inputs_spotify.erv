@@ -1,0 +1,81 @@
+album
+    #album_id, ID
+    $album_spotify_uri, VARCHAR(100)
+    title, VARCHAR(250)
+    release_date, DATE
+    total_tracks, INTEGER
+    label, TEXT
+    popularity, INTEGER
+
+artist
+    #artist_id, ID
+    $artist_spotify_uri, VARCHAR(100)
+    name, TEXT
+    followers, INTEGER
+    popularity, INTEGER
+
+$music
+    #music_id, ID
+    $music_spotify_uri, TEXT
+    name, TEXT
+    duration_ms, FLOAT
+    popularity, INTEGER
+    danceability, FLOAT
+    energy, FLOAT
+    music_key, INTEGER
+    loudness, FLOAT
+    mode, INTEGER
+    speechiness, FLOAT
+    acousticness, FLOAT
+    instrumentalness, FLOAT
+    liveness, FLOAT
+    valence, FLOAT
+    tempo, FLOAT
+    time_signature, FLOAT
+
+genre
+    #genre_id, ID
+    $genre, VARCHAR(100)
+
+category
+    #category_id, ID
+    $category, VARCHAR(100)
+
+genre_category
+    #genre_category_id, ID
+    genre_id, INTEGER, genre(genre_id)
+    category_id, INTEGER, category(category_id)
+
+music_artist
+    #music_artist_id, ID
+    music_id, INTEGER, music(music_id)
+    artist_id, INTEGER, artist(artist_id)
+
+album_music
+    #album_music_id, ID
+    album_id, INTEGER, album(album_id)
+    music_id, INTEGER, music(music_id)
+
+genre_artist
+    #genre_artist_id, ID
+    genre_id, INTEGER, genre(genre_id)
+    artist_id, INTEGER, artist(artist_id)
+
+play
+    #play_id, ID
+    music_id, INTEGER, music(music_id)
+    end_time, TIMESTAMP 
+    ms_played, FLOAT
+    platform, TEXT
+    ip_addr, TEXT
+    reason_start, TEXT
+    reason_end, TEXT
+    shuffle, TEXT
+    skipped, TEXT
+    offline, TEXT
+    
+favorite
+    #favorite_id, ID
+    music_id, INTEGER, music(music_id)
+    year, INTEGER
+    added_at, TIMESTAMP
