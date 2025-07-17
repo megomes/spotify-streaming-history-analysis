@@ -1,4 +1,4 @@
-# 🎵 Spotify Analysis Sleep Apnea Project
+# 🎵 Spotify Streaming History
 
 > **Advanced music listening pattern analysis** - A comprehensive data science project analyzing Spotify streaming history
 >
